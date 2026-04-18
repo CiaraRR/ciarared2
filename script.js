@@ -151,3 +151,19 @@ if (lightbox && lbImg && lbClose && lbNext && lbPrev && lbCount && tileImgs.leng
     if (e.key === "ArrowLeft") prevImage();
   });
 }
+@media (max-width: 768px){
+  .hero-image{
+    margin-top: -96px;
+    height: 42vh;
+    min-height: 220px;
+    max-height: 360px;
+  }
+
+  .heroSwiper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+}
