@@ -15,66 +15,64 @@ body{
   color: var(--text);
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  /* because navbar is fixed */
-  padding-top: 110px; /* adjust if your navbar height changes */
+  padding-top: 110px;
   overflow-x: hidden;
 }
 
-/* ================= NAVBAR (OVER HERO) ================= */
+/* ================= NAVBAR ================= */
 
 .navbar{
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-
   background: rgba(202, 221, 252, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(52,93,90,.20);
 }
 
-.navbar-brand img { height:80px; }
+.navbar-brand img{
+  height: 80px;
+}
 
-.nav-link { color:#1d3432; }
-.nav-link:hover { color:rgba(104, 127, 165, 0.85); }
+.nav-link{
+  color:#1d3432;
+}
 
-/* ================= HERO (FULL SCREEN BEHIND NAVBAR) ================= */
+.nav-link:hover{
+  color:rgba(104, 127, 165, 0.85);
+}
+
+/* ================= HERO ================= */
 
 .hero-image{
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
-  min-height: 100dvh;
-
+  height: 85vh;
+  min-height: 520px;
+  max-height: 900px;
   margin: 0;
   padding: 0;
   overflow: hidden;
-
-  /* pull hero up behind fixed navbar */
-  margin-top: -110px; /* matches body padding-top */
+  margin-top: -110px;
 }
 
-/* Swiper fills hero */
 .heroSwiper,
 .heroSwiper .swiper-wrapper,
 .heroSwiper .swiper-slide{
   width: 100%;
   height: 100%;
-  min-height: inherit;
 }
 
 .heroSwiper img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 35%;
   display: block;
 }
 
-/* Optional: dots styling */
 .heroSwiper .swiper-pagination-bullet{
   background: #fff;
   opacity: 0.55;
@@ -84,8 +82,9 @@ body{
   opacity: 1;
 }
 
-/* Mobile tweak */
-@media(max-width:768px){
+/* ================= MOBILE / TABLET ================= */
+
+@media (max-width: 768px){
   body{
     padding-top: 96px;
   }
@@ -95,28 +94,28 @@ body{
   }
 
   .navbar-brand img{
-    height:64px;
+    height: 64px;
   }
 
   .hero-image{
     margin-top: -96px;
-    min-height: 60vh;
-    min-height: 60svh;
-    min-height: 60dvh;
+    height: 58vh;
+    min-height: 320px;
+    max-height: 520px;
   }
 
   .heroSwiper img{
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
+    background: #e9edf8;
   }
 }
 
-/* Optional extra small phones */
-@media(max-width:480px){
+@media (max-width: 480px){
   .hero-image{
-    min-height: 52vh;
-    min-height: 52svh;
-    min-height: 52dvh;
+    height: 50vh;
+    min-height: 280px;
+    max-height: 420px;
   }
 }
 
@@ -151,7 +150,9 @@ body{
 
 .gallery .tile .caption{
   position:absolute;
-  left:0; right:0; bottom:0;
+  left:0;
+  right:0;
+  bottom:0;
   padding:14px;
   background:rgba(252,250,246,0.92);
   text-align:center;
@@ -169,10 +170,15 @@ body{
 }
 
 @media(max-width:900px){
-  .gallery .tile{ grid-column:span 6; }
+  .gallery .tile{
+    grid-column:span 6;
+  }
 }
+
 @media(max-width:720px){
-  .gallery .tile{ grid-column:span 12; }
+  .gallery .tile{
+    grid-column:span 12;
+  }
 }
 
 /* ================= WORKSHOP SWIPER ================= */
@@ -211,7 +217,9 @@ body{
 }
 
 @media (min-width:768px){
-  .workshopSwiper .swiper-slide img{ height:360px; }
+  .workshopSwiper .swiper-slide img{
+    height:360px;
+  }
 }
 
 /* ================= LIGHTBOX ================= */
@@ -227,7 +235,9 @@ body{
   padding:24px;
 }
 
-.lightbox.open{ display:flex; }
+.lightbox.open{
+  display:flex;
+}
 
 .lightbox-inner{
   width:min(1100px,100%);
@@ -266,21 +276,30 @@ body{
   padding:8px 12px;
 }
 
-.lb-left, .lb-right{
+.lb-left,
+.lb-right{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   font-size:28px;
 }
 
-.lb-left{ left:20px; }
-.lb-right{ right:20px; }
-
-@media(max-width:720px){
-  .lb-left,.lb-right{ display:none; }
+.lb-left{
+  left:20px;
 }
 
-/* ================= ABOUT SECTION ================= */
+.lb-right{
+  right:20px;
+}
+
+@media(max-width:720px){
+  .lb-left,
+  .lb-right{
+    display:none;
+  }
+}
+
+/* ================= ABOUT ================= */
 
 .about-grid{
   display:grid;
@@ -388,12 +407,5 @@ footer a:hover{
   .contact-image img{
     max-width:300px;
     margin-bottom:2rem;
-  }
-}
-
-@media (max-width:768px){
-  .heroSwiper img{
-    object-fit: contain;
-    background: #e9edf8; /* fills empty space */
   }
 }
