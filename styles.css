@@ -401,7 +401,7 @@ footer a:hover{
 
 @media (max-width: 991px){
   .contact-image{
-    text-align:center;
+    text-align:left;
   }
 
   .contact-image img{
