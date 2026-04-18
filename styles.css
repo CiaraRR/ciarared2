@@ -18,6 +18,7 @@ body{
 
   /* because navbar is fixed */
   padding-top: 110px; /* adjust if your navbar height changes */
+  overflow-x: hidden;
 }
 
 /* ================= NAVBAR (OVER HERO) ================= */
@@ -29,7 +30,8 @@ body{
   z-index: 1000;
 
   background: rgba(202, 221, 252, 0.85);
-  backdrop-filter: blur(px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(52,93,90,.20);
 }
 
@@ -42,10 +44,10 @@ body{
 
 .hero-image{
   position: relative;
-  width: 100vw;
-  height: 100vw;
-
-
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
 
   margin: 0;
   padding: 0;
@@ -61,12 +63,14 @@ body{
 .heroSwiper .swiper-slide{
   width: 100%;
   height: 100%;
+  min-height: inherit;
 }
 
 .heroSwiper img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
@@ -80,15 +84,39 @@ body{
   opacity: 1;
 }
 
-/* Mobile tweak (optional) */
+/* Mobile tweak */
 @media(max-width:768px){
-  body{ padding-top: 96px; }
-  section{ scroll-margin-top: 96px; }
+  body{
+    padding-top: 96px;
+  }
 
-  .navbar-brand img{ height:64px; }
+  section{
+    scroll-margin-top: 96px;
+  }
+
+  .navbar-brand img{
+    height:64px;
+  }
 
   .hero-image{
     margin-top: -96px;
+    min-height: 60vh;
+    min-height: 60svh;
+    min-height: 60dvh;
+  }
+
+  .heroSwiper img{
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Optional extra small phones */
+@media(max-width:480px){
+  .hero-image{
+    min-height: 52vh;
+    min-height: 52svh;
+    min-height: 52dvh;
   }
 }
 
@@ -331,11 +359,11 @@ body{
 
 footer{
   background:#FCFAF6;
-  color:#12193f;;
+  color:#12193f;
 }
 
 footer a{
-  color:#12193f;;
+  color:#12193f;
   text-decoration:none;
 }
 
