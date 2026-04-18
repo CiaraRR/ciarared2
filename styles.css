@@ -409,3 +409,20 @@ footer a:hover{
     margin-bottom:2rem;
   }
 }
+@media (max-width: 991px){
+  .navbar-collapse{
+    background: #f2f1ed;
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(18, 25, 63, 0.12);
+  }
+
+  .navbar-nav{
+    gap: 0.5rem;
+  }
+
+  .nav-link{
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+  }
+}
