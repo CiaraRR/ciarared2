@@ -167,3 +167,18 @@ if (lightbox && lbImg && lbClose && lbNext && lbPrev && lbCount && tileImgs.leng
     display: block;
   }
 }
+const workshopSwiper = new Swiper(".workshopSwiper", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+
+  navigation: {
+    nextEl: ".workshopSwiper .swiper-button-next",
+    prevEl: ".workshopSwiper .swiper-button-prev",
+  },
+
+  pagination: {
+    el: ".workshopSwiper .swiper-pagination",
+    clickable: true,
+  },
+});
