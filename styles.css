@@ -191,6 +191,13 @@ body{
 @media(max-width:900px){
   .about-grid{
     grid-template-columns:1fr;
+  }
+
+  .about-content{
+    text-align:left;
+  }
+
+  .about-image{
     text-align:center;
   }
 }
