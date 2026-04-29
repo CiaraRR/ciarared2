@@ -53,6 +53,15 @@ body{
   overflow: hidden;
   margin-top: -110px;
 }
+.hero-image{
+  margin-top: -110px;
+  position: relative;
+  z-index: 0;
+}
+
+.navbar{
+  z-index: 1000;
+}
 
 .heroSwiper,
 .heroSwiper .swiper-wrapper,
