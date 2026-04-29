@@ -145,8 +145,10 @@ body{
 
 .workshopSwiper .swiper-slide img{
   width:100%;
-  height:340px;
-  object-fit:cover;
+  height:auto;
+  max-height:650px;
+  object-fit:contain;
+  display:block;
   border-radius:12px;
 }
 
@@ -170,9 +172,10 @@ body{
   opacity:1;
 }
 
+/* mobile */
 @media(max-width:768px){
   .workshopSwiper .swiper-slide img{
-    height:260px;
+    max-height:420px;
   }
 }
 
