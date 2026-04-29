@@ -289,3 +289,40 @@ footer{
   background:#FCFAF6;
   color:var(--text);
 }
+/* ================= MOBILE HERO FIX ================= */
+
+@media(max-width:768px){
+  body{
+    padding-top:150px;
+  }
+
+  .navbar .container{
+    min-height:150px;
+  }
+
+  .navbar-brand img{
+    height:110px;
+  }
+
+  .hero-image{
+    height:55vh;
+    min-height:360px;
+    max-height:520px;
+  }
+
+  .heroSwiper img{
+    object-fit:cover;
+    object-position:center center;
+  }
+}
+
+@media(max-width:480px){
+  .hero-image{
+    height:45vh;
+    min-height:300px;
+  }
+
+  .navbar-brand img{
+    height:95px;
+  }
+}
