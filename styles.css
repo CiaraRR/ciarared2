@@ -1,18 +1,16 @@
+Replace your entire `styles.css` with this clean version:
+
+```css
 :root{
   --bg:#f2f1ed;
   --text:#12193f;
-  --muted:#12193f;
-  --line:#12193f;
+  --muted:#6f7680;
 }
 
 /* ================= BASE ================= */
 
 html{
   scroll-behavior:smooth;
-}
-
-section{
-  scroll-margin-top:110px;
 }
 
 body{
@@ -23,6 +21,10 @@ body{
   overflow-x:hidden;
 }
 
+section{
+  scroll-margin-top:110px;
+}
+
 /* ================= NAVBAR ================= */
 
 .navbar{
@@ -31,11 +33,10 @@ body{
   left:0;
   width:100%;
   z-index:1000;
-  background:rgba(202,221,252,0.85);
+  background:rgba(202,221,252,0.9);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
   border-bottom:none;
-  margin:0;
 }
 
 .navbar .container{
@@ -63,8 +64,6 @@ body{
   min-height:520px;
   max-height:900px;
   overflow:hidden;
-  margin:0;
-  padding:0;
 }
 
 .heroSwiper,
@@ -110,7 +109,7 @@ body{
   filter:brightness(.85);
 }
 
-.gallery .tile .caption{
+.gallery .caption{
   position:absolute;
   left:0;
   right:0;
@@ -142,80 +141,64 @@ body{
   }
 }
 
-/* ================= WORKSHOP GALLERY ================= */
+/* ================= WORKSHOP SWIPER ================= */
 
-.workshop-gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.workshop-card{
-  position:relative;
-  display:block;
-  overflow:hidden;
-  border-radius:12px;
-  text-decoration:none;
-  color:#fff;
-  background:#fff;
-}
-
-.workshop-card img{
+.workshopSwiper{
   width:100%;
-  height:320px;
+  overflow:hidden;
+  padding-bottom:45px;
+}
+
+.workshopSwiper .swiper-wrapper{
+  align-items:center;
+}
+
+.workshopSwiper .swiper-slide{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.workshopSwiper .swiper-slide img{
+  width:100%;
+  max-width:850px;
+  height:420px;
   object-fit:cover;
   display:block;
-  transition:transform .45s ease, filter .45s ease;
+  border-radius:14px;
 }
 
-.workshop-card:hover img{
-  transform:scale(1.06);
-  filter:brightness(.65);
+.workshopSwiper .swiper-button-next,
+.workshopSwiper .swiper-button-prev{
+  color:var(--text);
 }
 
-.workshop-caption{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:22px;
-  background:linear-gradient(
-    to top,
-    rgba(18,25,63,.78),
-    rgba(18,25,63,.05)
-  );
-  opacity:0;
-  transition:opacity .35s ease;
+.workshopSwiper .swiper-button-next::after,
+.workshopSwiper .swiper-button-prev::after{
+  font-size:26px;
 }
 
-.workshop-card:hover .workshop-caption{
+.workshopSwiper .swiper-pagination{
+  bottom:8px;
+}
+
+.workshopSwiper .swiper-pagination-bullet{
+  background:var(--text);
+  opacity:.3;
+}
+
+.workshopSwiper .swiper-pagination-bullet-active{
   opacity:1;
 }
 
-.workshop-caption h3{
-  font-size:1.35rem;
-  margin:0 0 6px;
-  color:#fff;
-}
-
-.workshop-caption p{
-  margin:0;
-  font-size:.95rem;
-  color:#fff;
-}
-
-@media(max-width:900px){
-  .workshop-gallery{
-    grid-template-columns:1fr;
-  }
-
-  .workshop-card img{
+@media(max-width:768px){
+  .workshopSwiper .swiper-slide img{
     height:260px;
   }
 
-  .workshop-caption{
-    opacity:1;
+  .workshopSwiper .swiper-button-next,
+  .workshopSwiper .swiper-button-prev{
+    display:none;
   }
 }
 
@@ -234,7 +217,7 @@ body{
 }
 
 .subtitle{
-  color:var(--muted);
+  color:var(--text);
   font-weight:600;
   margin-bottom:1rem;
 }
@@ -251,10 +234,6 @@ body{
 
   .about-content{
     text-align:left;
-  }
-
-  .about-image{
-    text-align:center;
   }
 
   .about-image img{
@@ -283,7 +262,7 @@ body{
 }
 
 .contact-input{
-  border:1px solid #12193f;
+  border:1px solid var(--text);
   background:#fff;
   color:var(--text);
   border-radius:0;
@@ -296,9 +275,9 @@ body{
 }
 
 .contact-btn{
-  background:#12193f;
+  background:var(--text);
   color:#fff;
-  border:1px solid #12193f;
+  border:1px solid var(--text);
   border-radius:0;
   padding:10px 18px;
 }
@@ -316,77 +295,12 @@ body{
   }
 }
 
-/* ================= CLEAN WORKSHOP SWIPER ================= */
-/* ================= WORKSHOP SWIPER ================= */
-
-.workshopSwiper{
-  width:100%;
-  max-width:100%;
-  position:relative;
-  overflow:hidden;
-  padding-bottom:50px;
-}
-
-.workshopSwiper .swiper-wrapper{
-  align-items:center;
-}
-
-.workshopSwiper .swiper-slide{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.workshopSwiper .swiper-slide img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  display:block;
-  border-radius:12px;
-}
-
-/* arrows */
-.workshopSwiper .swiper-button-next,
-.workshopSwiper .swiper-button-prev{
-  color:var(--text);
-  z-index:10;
-}
-
-.workshopSwiper .swiper-button-next::after,
-.workshopSwiper .swiper-button-prev::after{
-  font-size:28px;
-}
-
-/* dots */
-.workshopSwiper .swiper-pagination{
-  bottom:10px;
-}
-
-.workshopSwiper .swiper-pagination-bullet{
-  background:var(--text);
-  opacity:.35;
-}
-
-.workshopSwiper .swiper-pagination-bullet-active{
-  opacity:1;
-}
-
-/* mobile */
-@media(max-width:768px){
-  .workshopSwiper .swiper-slide img{
-    height:260px;
-  }
-
-  .workshopSwiper .swiper-button-next,
-  .workshopSwiper .swiper-button-prev{
-    display:none;
-  }
-}
-
 /* ================= FOOTER ================= */
 
 footer{
   background:#FCFAF6;
-  color:#12193f;
+  color:var(--text);
 }
+```
+
+This removes the duplicate workshop gallery/swiper mess and keeps only the cleaner Swiper version.
