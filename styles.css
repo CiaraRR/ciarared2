@@ -134,6 +134,80 @@ body{
   .gallery .tile{ grid-column:span 12; }
 }
 
+
+/* ================= WORKSHOP GALLERY ================= */
+
+.workshop-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.workshop-card{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border-radius:12px;
+  text-decoration:none;
+  color:#fff;
+}
+
+.workshop-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+  transition:transform .45s ease, filter .45s ease;
+}
+
+.workshop-card:hover img{
+  transform:scale(1.06);
+  filter:brightness(.65);
+}
+
+.workshop-caption{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:22px;
+  background:linear-gradient(
+    to top,
+    rgba(18,25,63,.78),
+    rgba(18,25,63,.05)
+  );
+  opacity:0;
+  transition:opacity .35s ease;
+}
+
+.workshop-card:hover .workshop-caption{
+  opacity:1;
+}
+
+.workshop-caption h3{
+  font-size:1.35rem;
+  margin:0 0 6px;
+}
+
+.workshop-caption p{
+  margin:0;
+  font-size:.95rem;
+}
+
+@media(max-width:900px){
+  .workshop-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .workshop-card img{
+    height:260px;
+  }
+
+  .workshop-caption{
+    opacity:1;
+  }
+}
 /* ================= WORKSHOP SWIPER ================= */
 
 .workshopSwiper{
