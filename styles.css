@@ -15,7 +15,6 @@ body{
   color: var(--text);
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  padding-top: 110px;
   overflow-x: hidden;
 }
 
@@ -24,15 +23,23 @@ body{
 .navbar{
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
   background: rgba(202, 221, 252, 0.85);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: none;
+  margin: 0;
+}
+
+.navbar .container{
+  min-height: 110px;
 }
 
 .navbar-brand img{
   height: 80px;
+  display: block;
 }
 
 .nav-link{
@@ -51,16 +58,8 @@ body{
   min-height: 520px;
   max-height: 900px;
   overflow: hidden;
-  margin-top: -110px;
-}
-.hero-image{
-  margin-top: -110px;
-  position: relative;
-  z-index: 0;
-}
-
-.navbar{
-  z-index: 1000;
+  margin: 0;
+  padding: 0;
 }
 
 .heroSwiper,
@@ -68,6 +67,10 @@ body{
 .heroSwiper .swiper-slide{
   width: 100%;
   height: 100%;
+}
+
+.heroSwiper{
+  display:block;
 }
 
 .heroSwiper img{
