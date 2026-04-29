@@ -294,7 +294,7 @@ section{
     margin-bottom:2rem;
   }
 }
-
+.contact-grid{  display:grid;  grid-template-columns:40% 60%;  gap:3rem;  align-items:center;}.contact-image img{  width:100%;  max-width:420px;  display:block;}.contact-form{  max-width:760px;}@media(max-width:900px){  .contact-grid{    grid-template-columns:1fr;  }  .contact-image img{    max-width:300px;    margin-bottom:2rem;  }}
 /* ================= FOOTER ================= */
 
 footer{
