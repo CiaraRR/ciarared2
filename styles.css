@@ -28,16 +28,13 @@ body{
   z-index: 1000;
   background: rgba(202, 221, 252, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(52,93,90,.20);
+  border-bottom: none;
 }
 
 .navbar-brand img{
   height: 80px;
 }
 
-.navbar{
-  border-bottom: none;
-}
 .nav-link{
   color:#1d3432;
 }
