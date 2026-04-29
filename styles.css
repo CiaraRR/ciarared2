@@ -3,7 +3,18 @@
   --text:#12193f;
   --muted:#6f7680;
 }
+body{
+  padding-top:110px;
+}
 
+.contact-content{
+  max-width:600px;
+}
+
+.contact-image{
+  display:flex;
+  justify-content:center;
+}
 /* ================= BASE ================= */
 
 html{ scroll-behavior:smooth; }
