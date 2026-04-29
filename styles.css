@@ -3,21 +3,12 @@
   --text:#12193f;
   --muted:#6f7680;
 }
-body{
-  padding-top:110px;
-}
 
-.contact-content{
-  max-width:600px;
-}
-
-.contact-image{
-  display:flex;
-  justify-content:center;
-}
 /* ================= BASE ================= */
 
-html{ scroll-behavior:smooth; }
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   background:var(--bg);
@@ -25,9 +16,12 @@ body{
   margin:0;
   font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   overflow-x:hidden;
+  padding-top:110px;
 }
 
-section{ scroll-margin-top:110px; }
+section{
+  scroll-margin-top:110px;
+}
 
 /* ================= NAVBAR ================= */
 
@@ -43,15 +37,22 @@ section{ scroll-margin-top:110px; }
   border-bottom:none;
 }
 
-.navbar .container{ min-height:110px; }
+.navbar .container{
+  min-height:110px;
+}
 
 .navbar-brand img{
   height:80px;
   display:block;
 }
 
-.nav-link{ color:#1d3432; }
-.nav-link:hover{ color:rgba(104,127,165,0.85); }
+.nav-link{
+  color:#1d3432;
+}
+
+.nav-link:hover{
+  color:rgba(104,127,165,0.85);
+}
 
 /* ================= HERO ================= */
 
@@ -225,19 +226,34 @@ section{ scroll-margin-top:110px; }
 
 .contact-grid{
   display:grid;
-  grid-template-columns:40% 60%;
+  grid-template-columns:1fr 1fr;
   gap:3rem;
+  align-items:center;
+}
+
+.contact-image{
+  width:100%;
+  height:100%;
+  display:flex;
   align-items:center;
 }
 
 .contact-image img{
   width:100%;
-  max-width:420px;
+  height:520px;
+  object-fit:cover;
   display:block;
-  margin:auto;
+  border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.contact-form{ max-width:760px; }
+.contact-content{
+  max-width:600px;
+}
+
+.contact-form{
+  max-width:760px;
+}
 
 .contact-input{
   border:1px solid var(--text);
@@ -265,11 +281,12 @@ section{ scroll-margin-top:110px; }
 }
 
 @media(max-width:900px){
-  .contact-grid{ grid-template-columns:1fr; }
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
 
   .contact-image img{
-    max-width:300px;
-    margin:0 auto 2rem;
+    height:280px;
   }
 }
 
@@ -278,34 +295,4 @@ section{ scroll-margin-top:110px; }
 footer{
   background:#FCFAF6;
   color:var(--text);
-}
-.contact-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:3rem;
-  align-items:stretch; /* key fix */
-}
-
-/* make image fill same height as form */
-.contact-image{
-  display:flex;
-}
-
-.contact-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover; /* fills nicely */
-  border-radius:8px;
-}
-
-/* keep form nicely constrained */
-.contact-content{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  max-width:600px;
-}
-
-.contact-image img{
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
