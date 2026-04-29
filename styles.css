@@ -35,6 +35,9 @@ body{
   height: 80px;
 }
 
+.navbar{
+  border-bottom: none;
+}
 .nav-link{
   color:#1d3432;
 }
