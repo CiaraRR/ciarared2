@@ -305,3 +305,7 @@ footer{
   justify-content:center;
   max-width:600px;
 }
+
+.contact-image img{
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
